@@ -3,12 +3,13 @@ FMOD Studio APIをvcpkgのcustom overlayとして使えるようにするレポ�
 
 ## Install
 1. 先に[custom-overlay-fmod](https://github.com/kdr250/custom-overlay-fmod)をインストールすること。
-2. FMODをダウンロード、解凍。
+2. [FMOD](https://www.fmod.com/download)をダウンロード、解凍。<br>
+  ※1で既にダウンロード、解凍済みならばそれを使えば良い。
 3. 任意のディレクトリに、vcpkgのcustom overlay用のディレクトリを作成。<br>※1で既に作ってある場合は同じディレクトリで良い<br>
   `mkdir custom-overlay && cd custom-overlay`
 4. 本プロジェクトをgit cloneする。<br>
   `git clone https://github.com/kdr250/custom-overlay-fmod-studio.git fmodstudio`
-5. ダウンロードおよび解凍したFMODのファイルを所定の位置にコピーする。<br>
+5. 解凍したFMODのファイルを所定の位置にコピーする。<br>
   FMOD Programmers API/api/studio/inc内のファイルを、このプロジェクトのinclude内にコピー。<br>
   FMOD Programmers API/api/studio/lib内のファイルを、このプロジェクトのlib内にコピー。
 6. 最終的に以下のようなディレクトリ構成になる。
