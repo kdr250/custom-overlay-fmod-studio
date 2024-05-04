@@ -10,6 +10,7 @@ if (WIN32)
     file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/fmodstudio_vc.lib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 elseif (APPLE)
     file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/libfmodstudio.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/lib")
+    file(COPY "${CMAKE_CURRENT_LIST_DIR}/lib/libfmodstudio.dylib" DESTINATION "${CURRENT_PACKAGES_DIR}/debug/lib")
 endif()
 
 file(COPY "${CMAKE_CURRENT_LIST_DIR}/fmodstudio-config.cmake" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")

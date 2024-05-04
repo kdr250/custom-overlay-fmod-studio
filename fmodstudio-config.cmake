@@ -3,7 +3,6 @@ get_filename_component(FMODSTUDIO_BASE_DIR "${CMAKE_CURRENT_LIST_DIR}/../../" AB
 
 # add info about location of the dynamic library file
 if (WIN32)
-    
     cmake_path(SET FMODSTUDIO_DLL_PATH_DEBUG NORMALIZE ${FMODSTUDIO_BASE_DIR}/debug/bin/fmodstudio.dll)
     cmake_path(SET FMODSTUDIO_LIB_PATH_DEBUG NORMALIZE ${FMODSTUDIO_BASE_DIR}/debug/lib/fmodstudio_vc.lib)
     set_target_properties(
@@ -19,10 +18,15 @@ if (WIN32)
         IMPORTED_LOCATION_RELEASE "${FMODSTUDIO_DLL_PATH_RELEASE}"
         IMPORTED_IMPLIB_RELEASE "${FMODSTUDIO_LIB_PATH_RELEASE}"
     )
+
 elseif (APPLE)
     set_target_properties(
         FMODStudio::FMODStudio PROPERTIES
-        IMPORTED_IMPLIB "${FMODSTUDIO_BASE_DIR}/lib/libfmodstudio.dylib"
+        IMPORTED_IMPLIB_DEBUG "${FMODSTUDIO_BASE_DIR}/debug/lib/libfmodstudio.dylib"
+    )
+    set_target_properties(
+        FMODStudio::FMODStudio PROPERTIES
+        IMPORTED_IMPLIB_RELEASE "${FMODSTUDIO_BASE_DIR}/lib/libfmodstudio.dylib"
     )
 endif()
 
